@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/* General */
+body{ background:#e7ebf2; font:400 13px/1.4 'Helvetica Neue', Arial, sans-serif}
+a{ color:#3b5998; text-decoration:none}
+
+
+/* Container */
+.container{ width:960px; margin:0 auto}
+#check-state{ display: none}
+
+
+/* Table */
+table{ margin:0; padding:0; border:none}
+th, td{ padding:5px 10px}
+th{ font-weight:bold}
+
+
+/* Form */
+input[type="text"]{ padding:5px; background:#fff; border:1px solid #ccc; border-radius:3px}
+
+
+/* Buttons & Links */
+.btn{ display:inline-block; padding:10px 30px; background:#789; color:#fff; font-size:13px; border:none; border-radius:30px}
+.btn-compact{ padding:5px 15px}
+.btn-success{ background:limegreen}
+.btn-danger{ background:indianred}
+.btn-facebook{ background:#3b5998}
+.btn-primary{ background:dodgerblue}
+.btn-default{ background:#eee; color:#3b5998; font-weight:normal; font-size:11px}
+.link-danger{ color:indianred}

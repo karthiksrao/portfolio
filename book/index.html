@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Book</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+
+<div class="container">
+	
+	
+	<div id="scan-state">
+		<textarea id="scanned-isbns"></textarea>
+		<input type="button" id="proceed-to-check" class="btn btn-success" value="Proceed" />
+	</div> <!-- scan-state -->
+	
+	
+	<div id="check-state">
+		<table class="book-list">
+			<thead>
+				<tr>
+					<th>ISBN</th>
+					<th>TIS Price</th>
+					<th>BookScouter Price</th>
+					<th>Suggested Price</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				
+			</tbody>
+
+			<tfoot>
+				<tr><td colspan="4"><input type="button" class="btn btn-primary add-row" value="Add another book" /> <input type="button" class="btn btn-success check-prices" value="Check prices" /></td></tr>
+				<tr><td colspan="4" style="text-align:center"><h1>Total: $<span id="total-price"></span></h1></td></tr>
+			</tfoot>
+		</table>
+	</div> <!-- check-state -->
+	
+  
+</div> <!-- container -->
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
