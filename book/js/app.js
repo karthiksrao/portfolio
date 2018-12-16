@@ -3,6 +3,7 @@ $(function(){
 	var tis_url = "http://tisbookiu.com/BuybackBooks.aspx?i=";
 	var bs_url = "https://bookscouter.com/prices.php?isbn=";
 	var bs_url_suffix = "&searchbutton=Sell";
+	var amazon_url = "http://www.amazon.com/exec/obidos/ASIN/";
 	$('#scanned-isbns').val('');
 
 	var row_template = '<tr><td><input type="text" class="isbn" placeholder="Enter ISBN" /></td><td><input type="text" class="tis-price" placeholder="Enter TIS price" /></td><td><input type="text" class="bs-price" placeholder="Enter BookScouter price" /></td><td><h3>$<span class="suggested-price"></span></h3></td></tr>';
@@ -25,6 +26,7 @@ $(function(){
 		$('#scanned-isbns').val('');
 
 		window.open(tis_url+isbn_string, '_blank');
+		window.open(amazon_url+isbn_string, '_blank');
 
 		$(isbns).each(function(index){
 			if(this != ""){
