@@ -1,0 +1,62 @@
+[
+	{
+		"id":1, 
+		"name":"Snatch", 
+		"genre":"Comedy/Action", 
+		"year":"2000", 
+		"language":"English",
+		"poster":"snatch.jpg",
+		"synopsis":"Unscrupulous boxing promoters, violent bookmakers, a Russian gangster, incompetent amateur robbers, and supposedly Jewish jewelers fight to track down a priceless stolen diamond.",
+		"cast":[{"name":"Jason Statham","character":"Turkish"},{"name":"Brad Pitt","character":"Mickey O'Neil"},{"name":"Benicio Del Toro","character":"Franky Four Fingers"}]
+	},
+	{
+		"id":2, 
+		"name":"The Fast & The Furious", 
+		"genre":"Action", 
+		"year":"2001", 
+		"language":"English", 
+		"poster":"ff.jpg",
+		"synopsis":"Los Angeles police officer Brian O'Connor must decide where his loyalties really lie when he becomes enamored with the street racing world he has been sent undercover to destroy.",
+		"cast":[{"name":"Paul Walker","character":"Brian Spilner"},{"name":"Vin Diesel","character":"Dominic Toretto"},{"name":"Jordana Brewster","character":"Mia Toretto"}]
+	},
+	{
+		"id":3, 
+		"name":"Finding Nemo", 
+		"genre":"Comedy/Adventure", 
+		"year":"2003", 
+		"language":"English",
+		"poster":"nemo.jpg",
+		"synopsis":"After his son is captured in the Great Barrier Reef and taken to Sydney, a timid clownfish sets out on a journey to bring him home.",
+		"cast":[{"name":"Alexander Gould","character":"Nemo"},{"name":"Ellen DeGeneres","character":"Dory"},{"name":"Brad Garrett","character":"Bloat"}]
+	},
+	{
+		"id":4, 
+		"name":"Her", 
+		"genre":"Drama/Romance", 
+		"year":"2013", 
+		"language":"English",
+		"poster":"her.jpg",
+		"synopsis":"A lonely writer develops an unlikely relationship with his newly purchased operating system that's designed to meet his every need.",
+		"cast":[{"name":"Joaquin Phoenix","character":"Theodore"},{"name":"Scarlett Johansson","character":"Samantha"},{"name":"Rooney Mara","character":"Catherine"}]
+	},
+	{
+		"id":5, 
+		"name":"American Beauty", 
+		"genre":"Drama", 
+		"year":"1999", 
+		"language":"English",
+		"poster":"ambeauty.jpg",
+		"synopsis":"Lester Burnham, a depressed suburban father in a mid-life crisis, decides to turn his hectic life around after developing an infatuation for his daughter's attractive friend.",
+		"cast":[{"name":"Kevin Spacey","character":"Lester Burnham"},{"name":"Thora Birch","character":"Jane Burnham"},{"name":"Wes Bentley","character":"Ricky Fitts"}]
+	},
+	{
+		"id":6, 
+		"name":"The Dark Knight", 
+		"genre":"Action/Crime", 
+		"year":"2008", 
+		"language":"English",
+		"poster":"batman.jpg",
+		"synopsis":"Eight years on, a new evil rises from where the Batman and Commissioner Gordon tried to bury it, causing the Batman to resurface and fight to protect Gotham City... the very city which brands him an enemy.",
+		"cast":[{"name":"Christian Bale","character":"Bruce Wayne"},{"name":"Heath Ledger","character":"Joker"},{"name":"Aaron Eckhart","character":"Harvey Dent"}]
+	}
+]
