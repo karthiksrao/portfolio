@@ -223,6 +223,9 @@
   }
 
 }
+.margin-below-smallest{
+  margin-bottom: $spacing-smallest;
+}
 .margin-below-large{
   margin-bottom: $spacing-large;
 
@@ -708,7 +711,7 @@ button{
 }
 
 
-// Pohot Frame
+// Photo Frame
 .photo-frame{
 	@extend .well;
 	@extend .margin-below-large;
@@ -716,6 +719,10 @@ button{
   &.plain{
     padding: 0;
     background: white;
+  }
+
+  &.figma{
+    background-color: $color-figma-grey
   }
 
 	img{
@@ -836,6 +843,22 @@ li{
 }
 strong{
 	font-weight: $font-weight-medium;
+}
+
+.stat-number, .stat-title, .stat-desc{
+  @extend .text-center;
+  margin-bottom: $spacing-small !important;
+  font-size: $font-size-xxlarge;
+}
+
+.stat-title{
+  font-size: $font-size-small
+}
+
+.stat-desc{
+  margin-bottom: 0 !important;
+  font-size: $font-size-small;
+  color: $color-light-grey;
 }
 
 
@@ -1029,6 +1052,9 @@ footer{
 	}
 
 }
+@include format-project-hero('oasis');
+@include format-project-hero('source');
+@include format-project-hero('genie');
 @include format-project-hero('search360');
 @include format-project-hero('juni');
 @include format-project-hero('coachly');
