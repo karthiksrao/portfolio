@@ -37,7 +37,7 @@
     <section class="hero">
       <div class="media row-to-column reversed">
         <div class="media-body">
-          <h1 class="homepage-title">Hello! I'm Karthik Rao.</h1>
+          <h1 class="homepage-title">Hello! I'm <span class="inline-block">Karthik Rao</span>.</h1>
           <h2 class="homepage-sub-title">I am a full-stack product designer with a background in software engineering.</h2>
 
           <div class="marquee">
@@ -99,6 +99,7 @@
       <div class="project-card row-to-column">
         <div class="media-left">
           <img class="project-thumbnail" src="images/macbook.png" width="200px" alt="">
+          <div class="crooked-gradient-bg"></div>
         </div>
 
         <div class="media-body">
@@ -127,6 +128,7 @@
       <div class="project-card row-to-column">
         <div class="media-left">
           <img class="project-thumbnail" src="images/macbook.png" width="200px" alt="">
+          <div class="crooked-gradient-bg"></div>
         </div>
         <div class="media-body">
           <h3 class="project-title">Source Studio: Design System</h3>
@@ -152,6 +154,7 @@
       <div class="project-card row-to-column">
         <div class="media-left">
           <img class="project-thumbnail" src="images/television.png" width="200px" alt="">
+          <div class="crooked-gradient-bg"></div>
         </div>
         <div class="media-body">
           <h3 class="project-title">Car Configurator - tvOS App</h3>
@@ -221,6 +224,19 @@
   </main>
 
 <script type="text/javascript">
+
+  const triggerDiv = document.querySelector('.hero-profile-photo');
+  const rotatingDiv = document.querySelector('.crooked-gradient-bg');
+
+  triggerDiv.addEventListener('mouseenter', (event) => {
+    rotatingDiv.style.transform = 'rotate(10deg)';
+  });
+
+  triggerDiv.addEventListener('mouseleave', (event) => {
+    rotatingDiv.style.transform = 'rotate(-10deg)';
+  });
+
+
   /*
   const typing = document.querySelector('.typing');
   const text = typing.textContent; // Get the text inside the p element

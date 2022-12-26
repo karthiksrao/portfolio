@@ -741,9 +741,9 @@ button{
 }
 .well-outline{
   @extend .well;
-  background-color: transparent;
-  border: 1px solid $color-lightest-grey;
-  box-shadow: none;
+  //background-color: transparent;
+  //border: 1px solid $color-lightest-grey;
+  //box-shadow: none;
 }
 .well-warning{
   @extend .well;
@@ -909,8 +909,13 @@ strong{
   font-size: $font-size-xxlarge;
 }
 
+.stat-number{
+  color: white;
+}
+
 .stat-title{
-  font-size: $font-size-small
+  font-size: $font-size-small;
+  color: white
 }
 
 .stat-desc{
@@ -1087,7 +1092,27 @@ footer{
   color: $color-light-grey;
 }
 
+.crooked-gradient-bg{
+  position: absolute;
+  z-index: 1;
+  width: 220px;
+  height: 220px;
+  margin: 0px 0 0 40px;
+  background: $color-mesh-gradient;
+  box-shadow: 0 0 $spacing-medium $spacing-smaller darken($color-body-bg, 5%);
+  //background: radial-gradient(circle, #64064B 30%, #cc1a23 60%, #f66c3e 90%);
+  //border-radius: 10px;
+  transform: rotate(-10deg);
+  transform-origin: center;
+  transition: transform 0.5s;
 
+  @media(max-width:$breakpoint-mobile-max){
+    width: 220px;
+    height: 220px;
+    margin: -215px 0 0 -10px;
+    //transform: rotate(0);
+  }
+}
 
 // Hero
 .hero{
@@ -1126,24 +1151,15 @@ footer{
     }
   }
   .crooked-gradient-bg{
-    position: absolute;
-    z-index: -1;
     width: 320px;
     height: 320px;
     margin: -315px 0 0 -10px;
-    background: $color-mesh-gradient;
-    box-shadow: 0 0 $spacing-medium $spacing-smaller darken($color-body-bg, 5%);
-    //background: radial-gradient(circle, #64064B 30%, #cc1a23 60%, #f66c3e 90%);
-    //border-radius: 10px;
-    transform: rotate(-10deg);
-    transform-origin: center;
-    transition: transform 0.5s;
+    z-index: -1;
 
     @media(max-width:$breakpoint-mobile-max){
       width: 220px;
       height: 220px;
       margin: -215px 0 0 -10px;
-      transform: rotate(0);
     }
   }
 }
@@ -1175,6 +1191,8 @@ footer{
   }
 }
 
+
+
 // Projects
 .project-card{
   @extend .media;
@@ -1188,8 +1206,26 @@ footer{
   border-image-slice: 1;
   border-width: 1px;
   border-image-source: $color-mesh-gradient;
+  overflow: hidden;
   //border-radius: $spacing-small;
 
+  .media-left{
+    position: relative;
+
+    .project-thumbnail{
+      width: 300px;
+      z-index: 2;
+      margin-bottom: $spacing-large
+    }
+
+    .crooked-gradient-bg{
+      filter: blur(140px);
+
+      @media(max-width:$breakpoint-mobile-max){
+        margin:-70px 0 0 30px;
+      }
+    }
+  }
 
   .media-body{
     max-width: 450px;
@@ -1198,10 +1234,6 @@ footer{
       margin-top: $spacing-medium;
       text-align: center;
     }
-  }
-
-  .project-thumbnail{
-    width: 300px
   }
 
   .project-title{
@@ -1731,6 +1763,9 @@ section.project-meta{
     border: none;
     box-shadow: none;
   }
+}
+.inline-block{
+  display: inline-block;
 }
 .hidden{
   display:none !important;
