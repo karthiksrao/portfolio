@@ -38,7 +38,7 @@
       <div class="media row-to-column reversed">
         <div class="media-body">
           <h1 class="homepage-title">Hello! I'm <span class="inline-block">Karthik Rao</span>.</h1>
-          <h2 class="homepage-sub-title">I am a full-stack product designer with a background in software engineering.</h2>
+          <h2 class="homepage-sub-title">I am a<span class="typing"> full-stack</span> product designer with a <br />background in software engineering.</h2>
 
           <div class="marquee">
             <hr />
@@ -86,6 +86,10 @@
         </div>
         <div class="media-right">
           <img class="hero-profile-photo" src="images/karthik-rao.png" alt="Karthik Rao" width="300px">
+          <div class="cursor-container">
+              <img src="images/cursor.png" class="cursor" />
+              <span class="cursor-name">KR</span>
+          </div>
           <div class="crooked-gradient-bg"></div>
         </div>
       </div>
@@ -95,6 +99,11 @@
 
     <section>
       <h4 class="section-title">Featured Work</h4>
+
+      <!--<div class="alert info">
+        <h4 class="alert-title">Select Projects Only</h4>
+        <p>If you'd like to learn more about my other work, please get in touch.</p>
+      </div>-->
 
       <div class="project-card row-to-column">
         <div class="media-left">
@@ -179,7 +188,6 @@
 
     </section>
 
-
     <div class="marquee">
 
         <hr />
@@ -223,35 +231,5 @@
 
   </main>
 
-<script type="text/javascript">
-
-  const triggerDiv = document.querySelector('.hero-profile-photo');
-  const rotatingDiv = document.querySelector('.crooked-gradient-bg');
-
-  triggerDiv.addEventListener('mouseenter', (event) => {
-    rotatingDiv.style.transform = 'rotate(10deg)';
-  });
-
-  triggerDiv.addEventListener('mouseleave', (event) => {
-    rotatingDiv.style.transform = 'rotate(-10deg)';
-  });
-
-
-  /*
-  const typing = document.querySelector('.typing');
-  const text = typing.textContent; // Get the text inside the p element
-  typing.textContent = ''; // Clear the text
-
-  let index = 0;
-
-  const interval = setInterval(() => {
-    typing.textContent += text[index]; // Add the next character
-    index++; // Move to the next character
-    if (index >= text.length) {
-      // If we've reached the end of the text, stop the animation
-      clearInterval(interval);
-    }
-  }, 50); // Set the speed of the animation (lower values = faster)*/
-</script>
-
+<script type="text/javascript" src="scripts/kr.js"></script>
 </body>

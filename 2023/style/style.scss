@@ -459,14 +459,12 @@ $kr_mesh_gradient: linear-gradient(to top right, #64064B, #cc1a23, #f66c3e);
   }
 
 	.media-body{
+    @extend .gradient-border;
 		align-self: flex-end;
 		padding: $spacing-larger $spacing-medium;
 		background: $color-card-bg;
     color: white; // $color-secondary-text;
-    border: 10px solid;
-    border-image-slice: 1;
-    border-width: 1px;
-    border-image-source: $color-mesh-gradient;
+
     box-shadow: 0 0 $spacing-large $spacing-smaller $color-module-shadow;
 
 		.quote{
@@ -727,12 +725,9 @@ button{
 // Well
 .well{
   @extend .padded;
+  @extend .gradient-border;
   background-color: $color-card-bg;
   color: $color-medium-grey;
-  border: 10px solid;
-  border-image-slice: 1;
-  border-width: 1px;
-  border-image-source: $color-mesh-gradient;
   box-shadow: 0 0 $spacing-medium $spacing-smaller darken($color-body-bg, 5%);
 }
 .well-default{
@@ -795,7 +790,12 @@ button{
 	}
 
 }
-
+.gradient-border{
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 1px;
+  border-image-source: $color-mesh-gradient;
+}
 
 
 /* Typgraphy */
@@ -1031,9 +1031,9 @@ article{
     @extend .margin-above;
     @extend .margin-below;
 
-    /*.media-left{
-      margin-right: $spacing-smaller !important;
-    }*/
+    .media{
+      align-items:center;
+    }
 
     .marquee-icon{
       width: 24px;
@@ -1104,7 +1104,7 @@ footer{
   //border-radius: 10px;
   transform: rotate(-10deg);
   transform-origin: center;
-  transition: transform 0.5s;
+  transition: transform 1s;
 
   @media(max-width:$breakpoint-mobile-max){
     width: 220px;
@@ -1118,9 +1118,11 @@ footer{
 .hero{
   .media{
     justify-content: space-between;
+    align-items: start;
 
     @media(max-width:$breakpoint-mobile-max){
       justify-content: center;
+      align-items: center;
       padding: $spacing-small 0
     }
   }
@@ -1133,16 +1135,20 @@ footer{
       text-align: center;
     }
   }
-  .media-right img{
-    border: 1px solid $color-body-bg;
+  .media-right{
+    position: relative;
 
-    @media(max-width:$breakpoint-mobile-max){
-      width: 200px;
+    .hero-profile-photo{
+      border: 1px solid $color-body-bg;
+
+      @media(max-width:$breakpoint-mobile-max){
+        width: 200px;
+      }
+      //border-radius: $spacing-small;
     }
-    //border-radius: $spacing-small;
   }
   p{
-    font-size: $font-size-small;
+    //font-size: $font-size-small;
     color: $color-secondary-text; // $color-medium-grey;
     line-height: $line-height-paragraph;
 
@@ -1155,6 +1161,7 @@ footer{
     height: 320px;
     margin: -315px 0 0 -10px;
     z-index: -1;
+    //filter: blur(140px);
 
     @media(max-width:$breakpoint-mobile-max){
       width: 220px;
@@ -1192,6 +1199,37 @@ footer{
 }
 
 
+// Alert
+.alert{
+  @extend .padded;
+  @extend .margin-below-largest;
+}
+
+// Animations
+.typing{
+  //display: inline-block;
+  border-right: 1px solid white;
+}
+.cursor-container{
+  //display: none;
+  position: absolute;
+  z-index: 999;
+  margin: -1000px 0 0 150px;
+  transition: transform 1s;
+
+  .cursor{
+    width:32px;
+    height: 32px;
+    //background: url(../images/cursor.png) no-repeat 100%;
+  }
+
+  .cusor-name{
+    display: inline-block;
+    background: #1E88E5;
+    color: white;
+  }
+
+}
 
 // Projects
 .project-card{
@@ -1199,13 +1237,10 @@ footer{
   @extend .flex-spread;
   @extend .well;
   @extend .margin-below-largest;
+  @extend .gradient-border;
   background-color: $color-card-bg;
   padding: $spacing-larger;
   color: $color-secondary-text;
-  border: 10px solid;
-  border-image-slice: 1;
-  border-width: 1px;
-  border-image-source: $color-mesh-gradient;
   overflow: hidden;
   //border-radius: $spacing-small;
 
@@ -1215,7 +1250,10 @@ footer{
     .project-thumbnail{
       width: 300px;
       z-index: 2;
-      margin-bottom: $spacing-large
+
+      @media(max-width:$breakpoint-mobile-max){
+        margin-bottom: $spacing-large
+      }
     }
 
     .crooked-gradient-bg{

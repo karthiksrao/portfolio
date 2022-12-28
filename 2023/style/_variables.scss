@@ -1,11 +1,9 @@
-/* Variables */
-
-// Colors
-$color-body-bg: #1B2A32; // #fff; // #e9ebee;
-$color-card-bg: #21333B;
-$color-dark-separator: #314b56; // #21333B;
+$color-body-bg: #234; // #fff; // #e9ebee;
+$color-card-bg: darken($color-body-bg,5%);
+$color-dark-separator: lighten($color-body-bg,10%); // #21333B;
 $color-hero-lighting: #b9c4d2; //#d5dde4;
 $color-mesh-gradient: linear-gradient(to top right, #8938A1, #cc1a23, #f66c3e);
+//$color-mesh-gradient: linear-gradient(to top right, #38A189, #1cca23, #c3ef66); // goblin green
 $color-module-shadow: darken($color-body-bg,5%);
 $color-header-bg : #3493c1; // #374550;
 $color-accent: #789;
@@ -13,7 +11,7 @@ $color-accent-lightest: #EAEFF4;
 $color-default-link: #2D9CDB; // #3c9ac9;
 $color-default-link-hover: #2a6d8e;
 $color-secondary-link: #004b95;
-$color-secondary-text: #8A99A3;
+$color-secondary-text: lighten($color-body-bg,50%);
 $color-off-white: #f2f2f2;
 $color-lightest-grey: #ddd;
 $color-lighter-grey: #bbb;
