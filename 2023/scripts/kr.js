@@ -1,5 +1,5 @@
 const triggerDiv = document.querySelector('.hero-profile-photo');
-const rotatingDiv = document.querySelector('.crooked-gradient-bg');
+const rotatingDiv = document.querySelector('.hero-profile-photo');
 
 /*triggerDiv.addEventListener('mouseenter', (event) => {
   rotatingDiv.style.transform = 'rotate(0deg)';
@@ -46,6 +46,8 @@ function deleteAdjective(){
   let currentAdjective = typing.textContent;
   let index = currentAdjective.length;
 
+  typing.setAttribute('style','border-right: 1px solid white');
+
   const deleteInterval = setInterval(() => {
     currentAdjective = currentAdjective.slice(0, -1);
     typing.textContent = currentAdjective; // Add the next character
@@ -63,15 +65,15 @@ setTimeout(deleteAdjective, 5000);
 
 function moveCusor(){
   const cursor = document.querySelector('.cursor-container');
-  cursor.setAttribute('style','transform: translate(0, 1000px)');
+  cursor.setAttribute('style','transform: translate(0, 980px)');
 
   setTimeout(() => {
-    cursor.setAttribute('style','transform: translate(-150px, 1000px)');
+    cursor.setAttribute('style','transform: translate(-150px, 980px)');
     rotatingDiv.setAttribute('style','transform: rotate(0)');
   }, 1000);
 
   setTimeout(() => {
-    cursor.setAttribute('style','transform: translate(0, -1000px)');
+    cursor.setAttribute('style','transform: translate(0, -980px)');
   }, 2000);
 
 }

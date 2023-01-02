@@ -828,7 +828,7 @@ h1,h2,h3,h4,h5,h6{
 	text-transform: uppercase;
 }
 p{
-  margin: 0 0 $spacing-small;
+  margin: 0 0 $spacing-medium;
 	font-size: $font-size-regular;
   line-height: $line-height-paragraph;
   color: $color-secondary-text;
@@ -929,6 +929,14 @@ strong{
 body{
   @extend .flex-vertical;
   @extend .flex-stretch;
+  //@extend .gradient-border;
+
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 0;
+  border-top-width: 5px;
+  border-image-source: $color-linear-mesh-gradient;
+
   align-items: center;
   margin: 0 auto;
   background: $color-body-bg;
@@ -946,8 +954,27 @@ body{
 header{
   @extend .flex;
 	justify-content: center;
+  align-items: center;
 	width: 100%;
 	margin: $spacing-largest auto;
+
+  a{
+    margin: 0 40px;
+    //color: $color-tertiary-text;
+
+    &.active{
+      color: white;
+      text-decoration: overline;
+    }
+
+    &:first-child{
+      margin-left: 0px;
+    }
+
+    &:last-child{
+      margin-right: 0px;
+    }
+  }
 }
 
 
@@ -1021,6 +1048,8 @@ article{
 .marquee{
   @extend .margin-above-large;
   @extend .margin-below-large;
+  background: radial-gradient(circle at center, lighten($color-body-bg,2%), $color-body-bg 70%);
+  color: $color-tertiary-text;
 
   hr{
     margin: 0 !important;
@@ -1089,7 +1118,7 @@ footer{
   @extend .margin-above-large;
   @extend .text-center;
   font-size: $font-size-small;
-  color: $color-light-grey;
+  color: $color-tertiary-text;
 }
 
 .crooked-gradient-bg{
@@ -1139,7 +1168,13 @@ footer{
     position: relative;
 
     .hero-profile-photo{
-      border: 1px solid $color-body-bg;
+      @extend .gradient-border;
+      padding: $spacing-medium;
+      background: darken($color-body-bg,10%);
+      transform: rotate(-10deg);
+      transform-origin: center;
+      transition: transform 1s;
+      //border: 1px solid $color-body-bg;
 
       @media(max-width:$breakpoint-mobile-max){
         width: 200px;
@@ -1149,7 +1184,7 @@ footer{
   }
   p{
     //font-size: $font-size-small;
-    color: $color-secondary-text; // $color-medium-grey;
+    color: $color-secondary-text; // $color-secondary-text
     line-height: $line-height-paragraph;
 
     @media(max-width:$breakpoint-mobile-max){
@@ -1157,6 +1192,7 @@ footer{
     }
   }
   .crooked-gradient-bg{
+    display: none;
     width: 320px;
     height: 320px;
     margin: -315px 0 0 -10px;
@@ -1208,7 +1244,7 @@ footer{
 // Animations
 .typing{
   //display: inline-block;
-  border-right: 1px solid white;
+  //border-right: 1px solid white;
 }
 .cursor-container{
   //display: none;
@@ -1232,6 +1268,10 @@ footer{
 }
 
 // Projects
+.projects-grid{
+  @extend .flex;
+
+}
 .project-card{
   @extend .media;
   @extend .flex-spread;

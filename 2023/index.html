@@ -13,6 +13,8 @@
 <body>
 
   <header>
+    <a href="index.html" class="active">About</a>
+    <a href="index.html#work">Work</a>
 		<a href="index.html" class="brand-logo">
 			<svg width="64px" height="64px" viewBox="0 0 47 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<g id="kr-logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-weight="600" font-family="Rubik-Medium, Rubik" letter-spacing="-1" font-size="40">
@@ -27,8 +29,9 @@
 									</g>
 							</g>
 					</g>
-			</svg>
-		</a>
+			</svg></a>
+    <a href="#">Resume</a>
+    <a href="#">Send Email</a>
 	</header>
 
 
@@ -79,8 +82,9 @@
 
           <p>At <a href="https://vmware.com" target="_blank">VMware</a>, I own the end-to-end user experience of applications across a variety of domains. I collaborate with Product Managers to influence product strategy, engage UX Researchers to understand user needs &amp; challenges, create pixel-perfect mockups, test interactive prototypes &amp; partner with Developers to bring the concepts to life.</p>
 
-          <div class="margin-above">
+          <div class="margin-above flex">
             <a href="#" class="btn-ghost">View Resumé</a>
+            <a href="#" class="btn-ghost margin-left">Email me</a>
           </div>
 
         </div>
@@ -97,7 +101,7 @@
 
     <hr class="no-margin-below">
 
-    <section>
+    <section id="work">
       <h4 class="section-title">Featured Work</h4>
 
       <!--<div class="alert info">
@@ -112,7 +116,7 @@
         </div>
 
         <div class="media-body">
-          <h3 class="project-title">VMware Genie Chatbot</h3>
+          <h3 class="project-title">Conversational Workflow Builder</h3>
           <p class="project-desc">An employee-facing virtual assistant and support concierge that is intuitive for administrators to manage.</p>
 
           <div class="marquee">
@@ -162,6 +166,32 @@
 
       <div class="project-card row-to-column">
         <div class="media-left">
+          <img class="project-thumbnail" src="images/macbook.png" width="200px" alt="">
+          <div class="crooked-gradient-bg"></div>
+        </div>
+        <div class="media-body">
+          <h3 class="project-title">Oasis Store</h3>
+          <p class="project-desc">Simplifying the IT hardware procurement experience for VMware’s employees.</p>
+          <div class="marquee">
+            <div class="marquee-items">
+              <div class="media">
+                <div class="media-left"><img class="project-role-icon" src="images/icons/icon-id.png" alt=""></div>
+                <div class="media-body"><span>Interaction Design</span></div>
+              </div>
+              <div class="media">
+                <div class="media-left"><img class="project-role-icon" src="images/icons/icon-strategy.png" alt=""></div>
+                <div class="media-body"><span>Product Strategy</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="margin-above">
+            <a href="studio.html" class="btn-ghost">View Case Study</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card row-to-column">
+        <div class="media-left">
           <img class="project-thumbnail" src="images/television.png" width="200px" alt="">
           <div class="crooked-gradient-bg"></div>
         </div>
@@ -188,7 +218,7 @@
 
     </section>
 
-    <div class="marquee">
+    <div class="marquee no-margin-below">
 
         <hr />
 
