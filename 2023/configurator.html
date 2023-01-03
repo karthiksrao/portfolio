@@ -24,34 +24,44 @@
   <main>
 
     <section class="project-hero">
-      <h1>VMware Genie Chatbot</h1>
-      <h3>An employee-facing virtual assistant and support concierge <br />that is intuitive for administrators to manage.</h3>
-
-      <div class="marquee">
-        <hr />
-        <div class="marquee-items">
-
-          <dl>
-            <dt>My Role</dt>
-            <dd>UX Strategy, Visual Design & Front-end Development</dd>
-          </dl>
-
-          <dl>
-            <dt>Design Team</dt>
-            <dd>Partnered with 2 UX Researchers</dd>
-          </dl>
-
-          <dl>
-            <dt>Deliverables</dt>
-            <dd>Visual Design and Front-end code</dd>
-          </dl>
-
-        </div> <!-- marquee-items -->
-        <hr />
-      </div>
+      <h1>Porsche 911 Configurator</h1>
+      <h3>Work in progress: Recreating Porsche’s 911 configurator for tvOS <br />as a design and coding exercise.</h3>
     </section>
 
-    <hr class="no-margin-below">
+    <section class="tv-slideshow-container">
+      <div id="tv-slideshow">
+        <div class="tv-slideshow-mask">
+          <img src="images/projects/configurator/model.png" alt="Image 1" class="slideshow-image">
+          <img src="images/projects/configurator/color.png" alt="Image 2" class="slideshow-image">
+          <img src="images/projects/configurator/wheel.png" alt="Image 3" class="slideshow-image">
+        </div>
+      </div>
+      <div class="crooked-gradient-bg"></div>
+
+    </section>
+
+    <div class="marquee">
+      <hr />
+      <div class="marquee-items">
+
+        <dl>
+          <dt>My Role</dt>
+          <dd>UX Strategy, Visual Design & Front-end Development</dd>
+        </dl>
+
+        <dl>
+          <dt>Design Team</dt>
+          <dd>Partnered with 2 UX Researchers</dd>
+        </dl>
+
+        <dl>
+          <dt>Deliverables</dt>
+          <dd>Visual Design and Front-end code</dd>
+        </dl>
+
+      </div> <!-- marquee-items -->
+      <hr />
+    </div>
 
     <div class="marquee no-margin-below">
 
@@ -96,4 +106,18 @@
 
   </main>
 
+<script type="text/javascript" charset="utf-8">
+/* Slideshow */
+const slideshow = document.querySelector('#slideshow');
+const images = slideshow.querySelectorAll('.slideshow-image');
+let currentIndex = 0;
+
+function showNextImage() {
+  images[currentIndex].classList.remove('active');
+  currentIndex = (currentIndex + 1) % images.length;
+  images[currentIndex].classList.add('active');
+}
+
+setInterval(showNextImage, 3000);
+</script>
 </body>
