@@ -840,7 +840,7 @@ button{
   @extend .gradient-border;
   background-color: $color-card-bg;
   color: $color-medium-grey;
-  box-shadow: 0 0 $spacing-medium $spacing-smaller darken($color-body-bg, 5%);
+  box-shadow: 0 0 $spacing-large $spacing-small darken($color-body-bg, 3%);
 }
 .well-default{
   @extend .well;
@@ -940,11 +940,11 @@ body{
   @extend .flex-stretch;
   //@extend .gradient-border;
 
-  border: 10px solid;
+  /*border: 10px solid;
   border-image-slice: 1;
   border-width: 0;
   border-top-width: 2px;
-  border-image-source: $color-linear-mesh-gradient;
+  border-image-source: $color-linear-mesh-gradient;*/
 
   align-items: center;
   margin: 0 auto;
@@ -995,7 +995,9 @@ main{
   @extend .flex;
 	flex-direction: column;
 	justify-content: center;
-  max-width: $spacing-max-width;
+  align-items: center;
+  width: 100%;
+  //max-width: $spacing-max-width;
 
 	&.project-container{
 		max-width: $spacing-max-width;
@@ -1009,6 +1011,7 @@ main{
 
 section{
 	width: 100%;
+  max-width: $spacing-max-width;
 	padding: $spacing-largest;
   padding-left: 0;
   padding-right: 0;
@@ -1061,6 +1064,8 @@ article{
 .marquee{
   @extend .margin-above-large;
   @extend .margin-below-large;
+  width: 100%;
+  max-width: $spacing-max-width;
   //background: radial-gradient(circle at center, lighten($color-body-bg,2%), $color-body-bg 70%);
   background: $color-body-bg;
   color: white; //$color-tertiary-text;
@@ -1105,55 +1110,39 @@ aside{
 
 
 footer{
-  //@extend .flex-spread;
-  //@extend .row-to-column;
-	@extend section;
-  //align-items: center;
-	max-width: $spacing-max-width;
-	margin: 0 auto;
-	color: darken($color-steel-grey,10%);
+  width: 100%;
+  max-width: $spacing-max-width;
 
-	.btn-ghost:hover{
-		background-color: darken($color-steel-grey,10%);
-		border-color: darken($color-steel-grey,10%);
-	}
+  .marquee-items{
+    justify-content: space-between;
+  }
 
-  @media(max-width: $breakpoint-mobile-max){
-		align-items: center;
-    text-align: center;
-
-		.btn-ghost{
-			margin-bottom: $spacing-medium;
-		}
+  .last-updated{
+    @extend .margin-above-large;
+    @extend .text-center;
+    font-size: $font-size-small;
+    color: $color-tertiary-text;
   }
 }
 
-
-.last-updated{
-  @extend .margin-above-large;
-  @extend .text-center;
-  font-size: $font-size-small;
-  color: $color-tertiary-text;
-}
-
-.crooked-gradient-bg{
+.gradient-bg{
   position: absolute;
   z-index: 1;
   width: 220px;
   height: 220px;
-  margin: 0px 0 0 40px;
+  //margin: 0px 0 0 40px;
   background: $color-mesh-gradient;
   box-shadow: 0 0 $spacing-medium $spacing-smaller darken($color-body-bg, 5%);
   //background: radial-gradient(circle, #64064B 30%, #cc1a23 60%, #f66c3e 90%);
   //border-radius: 10px;
-  transform: rotate(-10deg);
+  //transform: rotate(-10deg);
   transform-origin: center;
   transition: transform 1s;
 
   @media(max-width:$breakpoint-mobile-max){
-    width: 220px;
-    height: 220px;
-    margin: -215px 0 0 -10px;
+    //width: 220px;
+    //height: 220px;
+    //margin: -215px 0 0 -10px;
     //transform: rotate(0);
   }
 }
@@ -1216,7 +1205,7 @@ footer{
       margin-top: $spacing-larger
     }
   }
-  .crooked-gradient-bg{
+  .gradient-bg{
     display: none;
     width: 320px;
     height: 320px;
@@ -1321,8 +1310,10 @@ footer{
       }
     }
 
-    .crooked-gradient-bg{
-
+    .gradient-bg{
+      width: 250px;
+      margin-left: 20px;
+      transform: rotate(-40deg);
       filter: blur(140px);
 
       @media(max-width:$breakpoint-mobile-max){
@@ -1447,44 +1438,149 @@ footer{
 
 // Slideshow
 .tv-slideshow-container{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .tv-screen{
+
+    $tv-bezel-border: lighten(black,30%);
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    padding: 0;
+
+    .tv-bezel{
+      flex-grow: 1;
+      background: #000;
+    }
+
+    .tv-bezel-left, .tv-bezel-right{
+      width: $spacing-large;
+      border-top:1px solid $tv-bezel-border;
+      border-bottom:1px solid $tv-bezel-border;
+
+      @media(max-width:$breakpoint-mobile-max){
+        width: $spacing-small;
+      }
+    }
+
+    .tv-bezel-top, .tv-bezel-bottom{
+      width: 100%;
+      height: $spacing-large;
+
+      @media(max-width:$breakpoint-mobile-max){
+        height: $spacing-small;
+      }
+    }
+
+    .tv-bezel-left{
+      background: linear-gradient(to right, $tv-bezel-border, #000 70%);
+      border-radius: 5px 0 0 5px;
+    }
+
+    .tv-bezel-top{
+      border-top: 1px solid $tv-bezel-border;
+    }
+
+    .tv-bezel-right{
+      background: linear-gradient(to left, $tv-bezel-border, #000 70%);
+      border-radius: 0 5px 5px 0;
+    }
+
+    .tv-bezel-bottom{
+      border-bottom: 1px solid $tv-bezel-border;
+    }
+
+    .flex-column{
+      width: calc(100% - 40px);
+      flex-grow: 3;
+      background: black;
+    }
+
+    .tv-slideshow-window{
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+      border-radius: $spacing-smaller;
+    }
+
+    .tv-slideshow-items{
+      @extend .flex;
+      height: 100%;
+      transition: transform 1s;
+    }
+
+    .tv-slideshow-image{
+      width: auto;
+      height: 100%;
+      object-fit: cover;
+    }
+
+  }
+
+  .gradient-bg{
+    position: absolute;
+    z-index: -1;
+    filter: blur(140px);
+    width: 100%;
+    height: 80%;
+  }
+}
+
+
+/*
+.tv-slideshow-container{
   position: relative;
   width: 100%;
   max-width: 1000px;
   padding: 0;
 
-  #tv-slideshow{
-    width: 100%;
-    overflow: hidden;
-    padding:9px 8px 90px 5px;
-    background: url(../images/tv-silhouette-large.png) no-repeat;
-    background-size: cover;
-  }
-
   .tv-slideshow-mask{
     @extend .flex;
+    flex-direction: column;
+    //position: absolute;
+    z-index: 999;
     width: 100%;
-    height: 555px;
+  }
+
+  .tv-slideshow-bezel, .tv-slideshow-base{
+    width: 100%;
+  }
+
+  .tv-slideshow-window{
+    position: relative;
+    width: 940px;
+    height: 529px;
     overflow: hidden;
+    margin: -618px 0 0 29px;
+  }
+
+  .tv-slideshow-items{
+    @extend .flex;
+    height: 100%;
+    transition: transform 1s;
   }
 
   .slideshow-image {
+    width: auto;
     height: 100%;
-  }
-  .slideshow-image.active {
-    display: block;
+    object-fit: cover;
   }
 
-  .crooked-gradient-bg{
+  .gradient-bg{
     width: 120%;
-    height: 550px;
-    margin: -620px 0 0 -10%;
+    height: 100%;
+    margin: -650px 0 0 -10%;
     filter: blur(200px);
     transform: rotate(0);
     opacity: 0.5;
     z-index: -1;
   }
 }
-
+*/
 .grid{
 	@extend .flex-spread;
 	@extend .row-to-column;

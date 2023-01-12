@@ -29,16 +29,49 @@
     </section>
 
     <section class="tv-slideshow-container">
-      <div id="tv-slideshow">
-        <div class="tv-slideshow-mask">
+      <div class="tv-screen">
+
+        <div class="tv-bezel tv-bezel-left"></div>
+
+        <div class="flex-column">
+          <div class="tv-bezel tv-bezel-top"></div>
+          <div class="tv-slideshow-window">
+            <div class="tv-slideshow-items">
+              <img src="images/projects/configurator/model.png" class="tv-slideshow-image">
+              <img src="images/projects/configurator/color.png" class="tv-slideshow-image">
+              <img src="images/projects/configurator/wheel.png" class="tv-slideshow-image">
+              <img src="images/projects/configurator/interior.png" class="tv-slideshow-image">
+            </div>
+          </div>
+          <div class="tv-bezel tv-bezel-bottom"></div>
+        </div>
+
+        <div class="tv-bezel tv-bezel-right"></div>
+
+      </div> <!-- tv-screen -->
+      <img src="images/tv-base.png" width="100%" alt="">
+      <div class="gradient-bg"></div>
+    </section>
+
+    <!--<section class="tv-slideshow-container">
+
+      <div class="tv-slideshow-mask">
+        <img src="images/tv-bezel.png" class="tv-slideshow-bezel">
+        <img src="images/tv-base.png" class="tv-slideshow-base">
+      </div>
+
+      <div class="tv-slideshow-window">
+        <div class="tv-slideshow-items">
           <img src="images/projects/configurator/model.png" alt="Image 1" class="slideshow-image">
           <img src="images/projects/configurator/color.png" alt="Image 2" class="slideshow-image">
           <img src="images/projects/configurator/wheel.png" alt="Image 3" class="slideshow-image">
         </div>
       </div>
-      <div class="crooked-gradient-bg"></div>
 
-    </section>
+      <div class="gradient-bg"></div>
+
+    </section>-->
+
 
     <div class="marquee">
       <hr />
@@ -63,6 +96,9 @@
       <hr />
     </div>
 
+  </main>
+
+  <footer>
     <div class="marquee no-margin-below">
 
         <hr />
@@ -100,24 +136,44 @@
 
         <hr />
 
-        <p class="last-updated">Last updated: December 2022</p>
-
     </div>
+    <p class="last-updated">Last updated: January 2023</p>
+  </footer>
 
-  </main>
+  <script type="text/javascript" charset="utf-8">
+    /* Slideshow */
 
-<script type="text/javascript" charset="utf-8">
-/* Slideshow */
-const slideshow = document.querySelector('#slideshow');
-const images = slideshow.querySelectorAll('.slideshow-image');
-let currentIndex = 0;
+    const slideshowWindow = document.querySelector('.tv-slideshow-window');
+    const slideshowItems = document.querySelector('.tv-slideshow-items');
+    const slideshowImages = slideshowItems.querySelectorAll('.tv-slideshow-image');
+    let currentSlideIndex = 1;
 
-function showNextImage() {
-  images[currentIndex].classList.remove('active');
-  currentIndex = (currentIndex + 1) % images.length;
-  images[currentIndex].classList.add('active');
-}
 
-setInterval(showNextImage, 3000);
-</script>
+    function setSlideshowHeight(){
+      slideshowItems.style.transform = "translate(0px)";
+      currentSlideIndex = 1;
+
+      slideshowWindowHeight = slideshowWindow.offsetWidth / 1.784;
+      slideshowWindow.style.height = slideshowWindowHeight+"px";
+    }
+
+
+    function showNextImage(){
+      if(currentSlideIndex !== slideshowImages.length){
+        let offset = currentSlideIndex * slideshowWindow.offsetWidth;
+        slideshowItems.style.transform = "translate(-"+offset+"px)";
+        currentSlideIndex += 1;
+      }
+      else{
+        slideshowItems.style.transform = "translate(0px)";
+        currentSlideIndex = 1;
+      }
+    }
+
+
+    setSlideshowHeight();
+    window.addEventListener("resize",setSlideshowHeight);
+    setInterval(showNextImage, 5000);
+
+  </script>
 </body>
