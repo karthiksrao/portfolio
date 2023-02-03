@@ -1,5 +1,5 @@
 /* Type Adjectives */
-const adjectives = [" well-rounded", "n experienced"," passionate", " full-stack"];
+const adjectives = [" well-rounded", " passionate", " full-stack"];
 let newAdjectiveIndex = 0;
 let stopTyping = false;
 

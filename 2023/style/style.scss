@@ -973,6 +973,10 @@ header{
     margin: 0 40px;
     //color: $color-tertiary-text;
 
+    &.brand-logo img{
+      width: 64px;
+    }
+
     &:hover, &:focus{
       color: $color-default-link;
     }
@@ -988,6 +992,11 @@ header{
     &:last-child{
       margin-right: 0px;
     }
+  }
+
+  @media(max-width:$breakpoint-mobile-max){
+    a{display: none}
+    a.brand-logo{display: inline-block;}
   }
 }
 
@@ -1258,8 +1267,12 @@ footer{
 
 // Animations
 .typing{
-  //display: inline-block;
-  //border-right: 1px solid white;
+
+  @media(max-width:$breakpoint-mobile-max){
+    display: block;
+    height: 30px;
+    border: none !important;
+  }
 }
 .cursor-container{
   //display: none;
