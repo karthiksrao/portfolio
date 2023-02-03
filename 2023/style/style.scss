@@ -1159,6 +1159,7 @@ footer{
 
 // Hero
 .hero{
+  max-width: 900px;
   //padding: 0 0 $spacing-largest 0;
   .media{
     justify-content: space-between;
@@ -1186,13 +1187,17 @@ footer{
     @media(max-width:$breakpoint-mobile-max){
       flex-grow: 0;
       text-align: center;
+
+      .linebreak{
+        //display: none;
+      }
     }
   }
   .media-right{
     position: relative;
 
     .hero-profile-photo{
-      //@extend .gradient-border;
+      @extend .gradient-border;
       padding: $spacing-medium;
       background: $color-card-bg; //darken($color-body-bg,10%);
       transform: rotate(-10deg);
