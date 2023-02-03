@@ -995,6 +995,8 @@ header{
   }
 
   @media(max-width:$breakpoint-mobile-max){
+    margin-bottom: $spacing-large;
+
     a{display: none}
     a.brand-logo{display: inline-block;}
   }
@@ -1242,6 +1244,11 @@ footer{
       margin: -215px 0 0 -10px;
     }
   }
+
+  @media(max-width: $breakpoint-mobile-max){
+    padding-top: $spacing-large
+  }
+
 }
 .hero-content{
 	width: 100%;
@@ -1335,7 +1342,7 @@ footer{
       z-index: 2;
 
       @media(max-width:$breakpoint-mobile-max){
-        margin-bottom: $spacing-large
+        //margin-bottom: $spacing-large
       }
     }
 
