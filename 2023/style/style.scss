@@ -952,12 +952,12 @@ body{
   background: $color-body-bg;
   font: #{$font-size-regular} $font-stack-default;
   line-height: $line-height-default;
-  color: white; // $color-dark-grey;
+  color: white;
   cursor: default;
   scroll-behavior: smooth;
 
   @media (max-width: $breakpoint-mobile-max){
-    //background: #e9ebee;
+    overflow-x: hidden;
   }
 }
 
@@ -1125,6 +1125,14 @@ footer{
 
   .marquee-items{
     justify-content: space-between;
+
+    @media(max-width: $breakpoint-mobile-max){
+      align-items: center;
+
+      img{
+        display: none;
+      }
+    }
   }
 
   .last-updated{
