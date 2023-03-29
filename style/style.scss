@@ -1426,6 +1426,7 @@ footer{
       margin-left: 20px;
       transform: rotate(-40deg);
       filter: blur(64px);
+      display: none;
 
       @media(max-width:$breakpoint-mobile-max){
         margin:-70px 0 0 30px;
