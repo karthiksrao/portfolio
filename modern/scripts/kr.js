@@ -1,4 +1,12 @@
-/* Type Adjectives */
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+
+/* Type Adjectives
 const adjectives = [" full-stack", " well-rounded", "strategic"];
 let newAdjectiveIndex = 0;
 let stopTyping = false;
@@ -34,7 +42,7 @@ function typeNewAdjective(){
         typing.setAttribute('style','border:none')
       }
     }
-  }, 150); // Set the speed of the animation (lower values = faster)*/
+  }, 150); // Set the speed of the animation (lower values = faster)
 }
 
 function deleteAdjective(){
@@ -53,12 +61,12 @@ function deleteAdjective(){
       clearInterval(deleteInterval);
       typeNewAdjective();
     }
-  }, 150); // Set the speed of the animation (lower values = faster)*/
-}
+  }, 150); // Set the speed of the animation (lower values = faster)
+} */
 
 
 
-/* Move Cursor */
+/* Move Cursor 
 const rotatingDiv = document.querySelector('.hero-profile-photo');
 function moveCusor(){
   const cursor = document.querySelector('.cursor-container');
@@ -92,5 +100,5 @@ else{
       moveCusor();
     }
   });
-}
+} */
 

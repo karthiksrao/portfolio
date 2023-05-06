@@ -517,7 +517,8 @@ ul{
 
 // Definition List
 dl{
-  @extend .margin-below;
+  @extend .margin-below-large;
+  @extend .padded-sides-larger;
 	text-align: left
 }
 dt{
@@ -526,14 +527,14 @@ dt{
   font-weight: $font-weight-medium;
   color: $color-tertiary-text;
   text-transform: uppercase;
-  text-align: center;
+  //text-align: center;
 }
 dd{
   margin: $spacing-smaller 0 $spacing-small;
   color: $color-default-text; //$color-secondary-text;
 	font-size: $font-size-small;
   line-height: $line-height-default;
-  text-align: center;
+  //text-align: center;
 
   &:last-child{
     margin-bottom: 0;
@@ -797,22 +798,23 @@ a.btn{
     margin: 0 auto $spacing-small;
     border-style: solid;
     border-width: $spacing-small $spacing-small 0 $spacing-small;
-    border-color: #991036 transparent transparent transparent;
+    border-color: $color-dark-steel-grey transparent transparent transparent;
   }
 
 	.media-body{
-    @extend .gradient-border;
+    //@extend .gradient-border;
 		align-self: flex-end;
+    width: 100%;
 		padding: $spacing-larger $spacing-medium;
-		background: $color-card-bg;
-    color: $color-default-text; // $color-secondary-text;
+		background: $color-dark-steel-grey;
+    color: white; // $color-secondary-text;
 
     box-shadow: 0 0 $spacing-large $spacing-smaller $color-module-shadow;
 
 		.quote{
 			display: block;
-			font-size: $font-size-large;
-			font-weight: $font-weight-light;
+      font: $font-weight-light $font-size-regular $font-stack-title;
+      line-height: 1.4;
 			text-align: center;
 		}
 
@@ -884,6 +886,7 @@ a.btn{
   //@extend .gradient-border;
   background-color: $color-card-bg;
   color: $color-medium-grey;
+  border-radius: $spacing-medium;
   //box-shadow: 0 0 $spacing-large $spacing-small darken($color-body-bg, 3%);
 }
 .well-default{
@@ -921,6 +924,7 @@ a.btn{
 .photo-frame{
 	@extend .well;
 	@extend .margin-below-large;
+  border-radius: $spacing-medium;
 
   &.plain{
     padding: 0;
@@ -935,6 +939,7 @@ a.btn{
 	img{
 		display: block;
 		width: 100%;
+    border-radius: $spacing-small;
 	}
 
 	p{
@@ -1009,6 +1014,9 @@ body{
   //padding: $spacing-largest $spacing-large;
 
   &.title-pane{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 50%;
     max-width: 500px;
 
@@ -1022,6 +1030,13 @@ body{
 
     .profile-picture{
       border-radius: $spacing-medium;
+    }
+
+
+    .bottom-aligned{
+      @media (max-width: $breakpoint-tablet-max){
+        display: none;
+      }
     }
 
     @media (max-width: $breakpoint-tablet-max){
@@ -1049,6 +1064,7 @@ body{
   }
 
 }
+
 
 .hero{
   margin-top: -($spacing-largest);
@@ -1111,6 +1127,29 @@ body{
         color: white;
       }
     }
+
+    @media (max-width: $breakpoint-tablet-max){
+      color: white !important;
+
+      p{
+        color: white !important;
+      }
+
+      .btn-ghost{
+        color: white;
+        border-color: white;
+    
+        &:hover{
+          background-color: $color-default-link;
+          color: white;
+        }
+      }
+    }
+  }
+
+  @media (min-width:1061px) and (max-width: 1230px){
+    padding-left: $spacing-medium;
+    padding-right: $spacing-medium;
   }
 
   @media (max-width: $breakpoint-tablet-max){
@@ -1130,7 +1169,17 @@ body{
 .highlights{
   padding: $spacing-largest $spacing-large 0;
 
-  ul{}
+  ul li{
+    color: black;
+  }
+
+  .media-left{
+    margin-right: $spacing-large;
+  }
+
+  img{
+    opacity: 0.5;
+  }
 }
 
 
@@ -1179,7 +1228,7 @@ header{
 main{
   @extend .flex;
 	justify-content: start;
-  align-items: start;
+  align-items: stretch;
   margin-left: $spacing-largest;
 
   @media (max-width: $breakpoint-tablet-max){
@@ -1296,27 +1345,13 @@ aside{
 
 
 footer{
+  @extend .margin-above;
+  @extend .padded-above;
   width: 100%;
-  max-width: $spacing-max-width;
-
-  .marquee-items{
-    justify-content: space-around !important;
-
-    @media(max-width: $breakpoint-mobile-max){
-      align-items: center;
-
-      img{
-        display: none;
-      }
-    }
-  }
-
-  .last-updated{
-    @extend .margin-above-large;
-    @extend .text-center;
-    font-size: $font-size-small;
-    color: $color-tertiary-text;
-  }
+  font-size: $font-size-small;
+  color: $color-tertiary-text;
+  border-top: 1px solid $color-lightest-grey;
+  text-align: center;
 }
 
 
@@ -1343,6 +1378,29 @@ footer{
 }
 
 
+.back-to-top{
+  @extend .padded-small;
+  display: block;
+  background: $color-off-white;
+  text-align: center;
+  border-radius: $spacing-small;
+
+  @media (max-width: $breakpoint-tablet-max){
+    display: none;
+  }
+}
+
+.confidential{
+  @extend .padded;
+  background: $color-notepad-yellow;
+  border-radius: $spacing-medium;
+
+  img{
+    float: left;
+    margin-right: $spacing-small
+  }
+}
+
 
 /* Project */
 .project-card{
@@ -1359,6 +1417,7 @@ footer{
 
     @media (max-width: $breakpoint-mobile-max){
       margin-left: 0;
+      margin-right: 0;
     }
   }
 
@@ -1376,7 +1435,7 @@ footer{
     }
   }
 
-  img{
+  .project-media img{
     width: 375px;
   }
 
@@ -1393,6 +1452,23 @@ footer{
     display: block;
     font-family: $font-stack-title;
     font-size: $font-size-large;
+  }
+
+  .award-banner{
+    @extend .flex; 
+    @extend .margin-below;
+    //@extend .padded-left;
+    align-items: center;
+    //background: $color-accent-lightest;
+    //border-left: 5px solid $color-accent;
+
+    img{
+      @extend .margin-right-small;
+    }
+
+    @media (max-width: $breakpoint-mobile-max){
+      justify-content: center;
+    }
   }
 
 
@@ -1437,6 +1513,40 @@ footer{
     }
   }
 }
+
+.project-meta{
+  @extend .margin-above-largest;
+}
+
+
+.genie-process{
+
+  .media-large{
+    flex-direction: row-reverse;
+
+    .media-left{
+      margin-right: 0;
+    }
+
+    .media-body{
+      margin: 0 $spacing-medium 0 0;
+    }
+
+    @media (max-width: $breakpoint-mobile-max){
+      flex-direction: column-reverse;
+      align-items: start;
+
+      .media-left, .media-left img{
+        width: 100%;
+      }
+    }
+
+
+  }
+
+}
+
+
 
 
 
