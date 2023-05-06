@@ -1379,11 +1379,8 @@ footer{
 
 
 .back-to-top{
-  @extend .padded-small;
   display: block;
-  background: $color-off-white;
   text-align: center;
-  border-radius: $spacing-small;
 
   @media (max-width: $breakpoint-tablet-max){
     display: none;
