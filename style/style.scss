@@ -385,7 +385,7 @@ h1,h2,h3,h4,h5,h6{
   //background: $color-card-bg;
 	color: $color-default-text;
 	font-size: $font-size-large;
-	font-weight: $font-weight-light;
+	font-weight: $font-weight-regular;
   line-height: 1;
 	text-transform: uppercase;
 }
@@ -525,13 +525,13 @@ dt{
   display:block;
   font-size: $font-size-small;
   font-weight: $font-weight-medium;
-  color: $color-tertiary-text;
+  color: $color-default-text;
   text-transform: uppercase;
   //text-align: center;
 }
 dd{
   margin: $spacing-smaller 0 $spacing-small;
-  color: $color-default-text; //$color-secondary-text;
+  color: $color-secondary-text; //$color-secondary-text;
 	font-size: $font-size-small;
   line-height: $line-height-default;
   //text-align: center;
@@ -998,19 +998,41 @@ body{
   font: #{$font-size-regular} $font-stack-default;
   line-height: $line-height-default;
   color: $color-default-text;
+  border-top: 10px solid;
   cursor: default;
   scroll-behavior: smooth;
+
+  &.home{
+    border-color: #6cacf3;
+  }
+
+  &.genie{
+    border-color: #4a44b0;
+  }
+
+  &.studio{
+    border-color: #f7eee7;
+  }
+
+  &.oasis{
+    border-color: #cfdde5;
+  }
+
+  &.porsche{
+    border-color: #1d3050;
+  }
 
   @media (max-width: $breakpoint-tablet-max){
     flex-direction: column;
     overflow-x: hidden;
+    border-top: none !important;
   }
 }
 
 
 .pane{
   margin-left: $spacing-largest;
-  padding-top: $spacing-largest;
+  padding-top: $spacing-larger;
   //padding: $spacing-largest $spacing-large;
 
   &.title-pane{
@@ -1020,23 +1042,16 @@ body{
     width: 50%;
     max-width: 500px;
 
-    .page-title, .hero-cta, p, .profile-picture{
+    .hero-cta, p, .profile-picture{
       margin-bottom: $spacing-large;
     }
 
     .page-title{
-      margin-top: 4px;
+      margin: $spacing-smaller 0 $spacing-small;
     }
 
     .profile-picture{
       border-radius: $spacing-medium;
-    }
-
-
-    .bottom-aligned{
-      @media (max-width: $breakpoint-tablet-max){
-        display: none;
-      }
     }
 
     @media (max-width: $breakpoint-tablet-max){
@@ -1048,9 +1063,11 @@ body{
 
   &.content-pane{
     width: 100%;
-    max-width: 800px;
     margin-right: $spacing-largest;
-    padding-top: 60px;
+
+    p{
+      max-width: 1000px;
+    }
 
     @media (max-width: $breakpoint-tablet-max){
       margin: 0;
@@ -1167,7 +1184,8 @@ body{
 
 
 .highlights{
-  padding: $spacing-largest $spacing-large 0;
+  margin-left: $spacing-large;
+  //padding: $spacing-largest $spacing-large 0;
 
   ul li{
     color: black;
@@ -1377,14 +1395,19 @@ footer{
   }
 }
 
-
-.back-to-top{
-  display: block;
+.bottom-aligned{
+  @extend .margin-above-largest;
   text-align: center;
 
-  @media (max-width: $breakpoint-tablet-max){
-    display: none;
+  .back-to-top{
+    display: inline-block;
+    text-align: center;
+  
+    @media (max-width: $breakpoint-tablet-max){
+      display: none;
+    }
   }
+  
 }
 
 .confidential{
@@ -1396,6 +1419,35 @@ footer{
     float: left;
     margin-right: $spacing-small
   }
+}
+
+.vertical-separator{
+  width: 1px;
+  height: 100%;
+  background: $color-dark-separator radial-gradient(circle at 50% 50%, $color-lightest-grey, $color-body-bg); //$color-lightest-grey;
+}
+
+
+
+/* Intro */
+.intro-container{
+  justify-content: stretch;
+  margin-top: $spacing-large;
+
+  .about-karthik{
+    //width: 60%;
+  }
+
+  .vertical-separator{
+    @extend .margin-sides;
+  }
+
+  .resume-highlights{
+    display: none;
+    width: 40%;
+  }
+
+  
 }
 
 
@@ -1512,7 +1564,72 @@ footer{
 }
 
 .project-meta{
+  @extend .flex;
+  @extend .row-to-column;  
   @extend .margin-above-largest;
+
+  dl{
+    flex-grow: 1;
+    margin: 0 $spacing-largest 0 0;
+    padding: 0;
+
+    dt{
+      padding-bottom: $spacing-smallest;
+      border-bottom: 1px solid $color-lightest-grey;
+    }
+
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}
+
+
+.inline-role-highlight{
+  display: inline-block;
+  padding: $spacing-smallest $spacing-medium;
+  //border: 1px solid;
+  border-radius: $spacing-larger;
+
+  &.pm{
+    background-color: $color-lightest-green;
+    color: $color-main-green;
+    border-color: $color-main-green;
+  }
+
+  &.ux{
+    background-color: $color-lightest-blue;
+    color: $color-default-link;
+    border-color: $color-default-link;
+  }
+}
+
+.role-avatar{
+  display: inline-block;
+  padding: $spacing-smaller;
+  font-size: $font-size-smallest;
+  border: 1px solid;
+  border-radius: $spacing-larger;
+
+  &.pm{
+    background-color: $color-lightest-green;
+    color: $color-main-green;
+    border-color: $color-main-green;
+  }
+
+  &.ux{
+    background-color: $color-lightest-blue;
+    color: $color-default-link;
+    border-color: $color-default-link;
+  }
+}
+
+
+.marker-highlight{
+  //display: inline-block;
+  padding: 0 $spacing-smaller;
+  background-color: $color-notepad-yellow;
+  color: black;
 }
 
 
