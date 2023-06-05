@@ -56,6 +56,14 @@ body{
     }
 }
 
+/*.pane.content-pane{
+    min-width: 800px;
+
+    @media (max-width: $breakpoint-tablet-max) {
+        min-width: none;
+    }
+}*/
+
 .negative-margin-above{
     margin-top: -14px;;
 }
