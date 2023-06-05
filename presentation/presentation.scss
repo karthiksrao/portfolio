@@ -1,0 +1,91 @@
+/* Imports */
+@import "../style/variables";
+
+body{
+    border-top: none;
+}
+
+.pane.title-pane{
+
+    .hero{
+        background-size: contain !important;
+    }
+
+    .hero.intro{
+        background-color: #6eaef5;
+    }
+
+    .hero.vmware{
+        background-color: #005596;
+    }
+
+    .hero.genie{
+        padding-bottom: 320px;
+        background-color: #4a44b0;
+    }
+
+    li{
+        a{
+            display: block;
+            color: white;
+            opacity: 0.5;
+    
+            &.active{
+                opacity: 1;
+                border-bottom: 1px solid white;
+            }
+        }
+
+        li{
+            margin:$spacing-small 0 0 $spacing-large;
+
+            a{
+                font-size: $font-size-smallest;
+
+                &.active{
+                    border: none !important; // lighten(#4a44b0,10%);
+                }
+            }
+        }
+    }
+
+    .vmware{
+        background: url("images/hilltop.jpg") bottom center no-repeat;
+        background-size: cover;
+        color: white;
+    }
+}
+
+.negative-margin-above{
+    margin-top: -14px;;
+}
+
+.stat-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .stat-icon{
+        margin-right: $spacing-large;
+        width: 25px;
+        height: 100%;
+    }
+
+}
+
+.marker-highlight.pm{
+    background-color: $color-lightest-green;
+}
+
+.marker-highlight.ux{
+    background-color: $color-lightest-blue;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: $spacing-largest !important;
+    padding-top: $spacing-medium;
+    border-top: 1px solid #ccc;
+}
