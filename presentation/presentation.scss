@@ -1,5 +1,6 @@
 /* Imports */
 @import "../style/variables";
+//@import "../style/style";
 
 body{
     border-top: none;
@@ -24,6 +25,25 @@ body{
         background-color: #4a44b0;
     }
 
+    .submenu{
+        display: none;
+        font-size: $font-size-smallest;
+        margin-left:0;
+        padding-left: 0;
+        border: none;
+        list-style: none;
+
+        li{
+            margin-bottom: $spacing-medium;
+        }
+    }
+
+    .show-submenu .submenu{
+        display: block;
+        //max-height: 150px;
+        //overflow-y: scroll;
+    }
+
     li{
         a{
             display: block;
@@ -37,7 +57,7 @@ body{
         }
 
         li{
-            margin:$spacing-small 0 0 $spacing-large;
+            margin:$spacing-small 0 $spacing-small $spacing-large !important;
 
             a{
                 font-size: $font-size-smallest;
@@ -54,6 +74,24 @@ body{
         background-size: cover;
         color: white;
     }
+
+    .oasis{
+        background-color: #ccdbe2;
+        background-size: cover;
+        color: black;
+
+        a{
+            color: black;
+
+            &.active{
+                border-color: black;
+            }
+        }
+    }
+}
+
+.pane.content-pane{
+    width: 880px !important;
 }
 
 /*.pane.content-pane{
@@ -65,7 +103,7 @@ body{
 }*/
 
 .negative-margin-above{
-    margin-top: -14px;;
+    margin-top: -14px;
 }
 
 .stat-container{
@@ -87,6 +125,10 @@ body{
 
 .marker-highlight.ux{
     background-color: $color-lightest-blue;
+}
+
+.media img{
+    border-radius: $spacing-smaller;
 }
 
 footer{
