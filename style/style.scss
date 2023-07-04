@@ -1519,7 +1519,14 @@ footer{
       justify-content: center;
     }
   }
+  
+  &.karaoke-card{
+    max-height: fit-content !important;
 
+    .project-text{
+      padding-bottom: $spacing-medium;
+    }
+  }
 
   @media (max-width: $breakpoint-mobile-max){
     flex-direction: column;
@@ -1658,6 +1665,20 @@ footer{
 
   }
 
+}
+
+
+.skills-container{
+  @extend .flex; 
+  @extend .flex-spread; 
+  @extend .row-to-column; 
+  @extend .margin-above; 
+  @extend .margin-below;
+
+  @media (max-width: $breakpoint-mobile-max){
+    justify-content: center !important;
+    align-items: center;
+  }
 }
 
 
