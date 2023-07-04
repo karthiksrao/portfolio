@@ -1523,8 +1523,14 @@ footer{
   &.karaoke-card{
     max-height: fit-content !important;
 
-    .project-text{
-      padding-bottom: $spacing-medium;
+    video{
+      border-radius: $spacing-small
+    }
+
+    .video-caption{
+      @extend .margin-above-small;
+      font-size: $font-size-small;
+      text-align: center;
     }
   }
 
