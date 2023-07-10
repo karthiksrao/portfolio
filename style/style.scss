@@ -1693,6 +1693,10 @@ footer{
   img{
     filter: grayscale(1);
     opacity: 0.7;
+
+    @media (max-width: $breakpoint-mobile-max){
+      margin-bottom: $spacing-medium;
+    }
   }
 
   @media (max-width: $breakpoint-mobile-max){
