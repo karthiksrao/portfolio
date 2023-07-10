@@ -1046,6 +1046,15 @@ body{
       margin-bottom: $spacing-large;
     }
 
+    .hero-cta a{
+      @media (max-width: 1420px){
+        display: block;
+        width: 100%;
+        margin:0 0 $spacing-medium 0;
+        text-align: center;
+      }
+    }
+
     .page-title{
       margin: $spacing-smaller 0 $spacing-small;
     }
