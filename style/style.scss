@@ -205,6 +205,14 @@
   }
 
 }
+.margin-above-larger{
+  margin-top: $spacing-larger;
+
+  @media (max-width:$breakpoint-mobile-max){
+    margin-top: $spacing-medium;
+  }
+
+}
 .margin-above-largest{
   margin-top: $spacing-largest !important;
 
@@ -335,6 +343,18 @@
     margin-bottom: $spacing-medium;
   }
 }
+.padding-left-medium{
+  padding-left: $spacing-medium;
+}
+.padding-left-small{
+  padding-left: $spacing-small;
+}
+.padding-left-smaller{
+  padding-left: $spacing-smaller;
+}
+.padding-left-smallest{
+  padding-left: $spacing-smallest;
+}
 
 .no-margin-above{
 	margin-top: 0 !important;
@@ -356,7 +376,7 @@
 // Typgraphy
 h1,h2,h3,h4,h5,h6{
   margin: 0;
-  font-family: "Cairo";
+  font-family: $font-stack-title;
   font-weight: normal;
   word-wrap: break-word;
 }
@@ -391,7 +411,7 @@ h1,h2,h3,h4,h5,h6{
 }
 p{
   margin: 0 0 $spacing-medium;
-  font-family: "Rubik";
+  font-family: $font-stack-default;
 	font-size: $font-size-regular;
   line-height: $line-height-paragraph;
   color: $color-secondary-text;
@@ -1442,10 +1462,6 @@ footer{
 .intro-container{
   justify-content: stretch;
   margin-top: $spacing-large;
-
-  .about-karthik{
-    //width: 60%;
-  }
 
   .vertical-separator{
     @extend .margin-sides;
