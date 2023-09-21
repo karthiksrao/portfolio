@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Karthik Rao - Unofficial Porsche Configurator</title>
+<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta http-equiv='content-type' content='text/html; charset=UTF-8'><link rel='shortcut icon' type='image/x-icon' href='/favicon.png' />
+<link type="text/css" rel="stylesheet" href="style/style.css" />
+</head>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8EHJ08R1MN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8EHJ08R1MN');
+</script>
+
+
+<body class="porsche">
+
+  <header class="pane">
+		<a href="index.html" class="brand-logo"> <img src="images/karthikrao.png" alt="KR"></a>
+	</header>
+
+  <main>
+
+    <section class="pane title-pane">
+
+      <div class="hero porsche">
+        <h1 class="page-title">Unofficial Porsche Configurator</h1>
+        <p class="page-subtitle">Reimagining Porsche's 911 configurator for tvOS as a design and coding exercise.</p>
+
+        <div class="hero-cta">
+          <a href="index.html" class="btn-ghost">&larr; Back to Homepage</a>
+        </div>
+      </div>
+  
+    </section>
+  
+    <section class="pane content-pane">
+
+        <h5 class="subtitle margin-above-small">tvOS App Concept</h5>
+  
+        <div class="tv-slideshow-container">
+            <div class="tv-screen">
+      
+              <div class="tv-bezel tv-bezel-left"></div>
+      
+              <div class="flex-column">
+                <div class="tv-bezel tv-bezel-top"></div>
+                <div class="tv-slideshow-window">
+                  <div class="tv-slideshow-items">
+                    <img src="images/projects/configurator/model.png" class="tv-slideshow-image">
+                    <img src="images/projects/configurator/color.png" class="tv-slideshow-image">
+                    <img src="images/projects/configurator/wheel.png" class="tv-slideshow-image">
+                    <img src="images/projects/configurator/interior.png" class="tv-slideshow-image">
+                  </div>
+                </div>
+                <div class="tv-bezel tv-bezel-bottom"></div>
+              </div>
+      
+              <div class="tv-bezel tv-bezel-right"></div>
+      
+            </div> <!-- tv-screen -->
+            <img src="images/tv-base.png" width="100%" alt="">
+        </div>
+  
+  
+    </section>
+
+  </main>
+
+  <script type="text/javascript" charset="utf-8">
+    /* Slideshow */
+
+    const slideshowWindow = document.querySelector('.tv-slideshow-window');
+    const slideshowItems = document.querySelector('.tv-slideshow-items');
+    const slideshowImages = slideshowItems.querySelectorAll('.tv-slideshow-image');
+    let currentSlideIndex = 1;
+
+
+    function setSlideshowHeight(){
+      slideshowItems.style.transform = "translate(0px)";
+      currentSlideIndex = 1;
+
+      slideshowWindowHeight = slideshowWindow.offsetWidth / 1.784;
+      slideshowWindow.style.height = slideshowWindowHeight+"px";
+    }
+
+
+    function showNextImage(){
+      if(currentSlideIndex !== slideshowImages.length){
+        let offset = currentSlideIndex * slideshowWindow.offsetWidth;
+        slideshowItems.style.transform = "translate(-"+offset+"px)";
+        currentSlideIndex += 1;
+      }
+      else{
+        slideshowItems.style.transform = "translate(0px)";
+        currentSlideIndex = 1;
+      }
+    }
+
+
+    setSlideshowHeight();
+    window.addEventListener("resize",setSlideshowHeight);
+    setInterval(showNextImage, 5000);
+
+  </script>
+
+</body>
