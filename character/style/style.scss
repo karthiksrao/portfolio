@@ -138,6 +138,12 @@ header{
 
       padding: $spacing-largest;
 
+      @media (max-width: $breakpoint-tablet-max){
+        justify-content: center;
+        align-items: center;
+        padding-bottom: calc($spacing-largest*2) !important;
+      }
+
       img{
         margin-bottom: $spacing-large;
       }
@@ -145,6 +151,10 @@ header{
       .stat-number{
         display: block;
         margin-bottom: $spacing-large !important;
+
+        @media (max-width: $breakpoint-tablet-max){
+          text-align: center !important;
+        }
       }
 
       .stat-number, .stat-title{
