@@ -76,8 +76,10 @@
     <!-- Official Characters -->
     <section>
       <h3 class="section-title">What are Official Characters?</h3>
-      <p>Official Characters are <span class="marker-highlight">created by brands, celebrities or influencers</span> to engage their audience on Character AI.</p>
-      <p>To facilitate this, Character AI will have to build a <span class="marker-highlight">dedicated character-management platform</span> that provides complete control to brands/creators for managing the entire lifecycle of their characters: from providing data for fine-tuning models to viewing engagement &amp; ROI analytics.</p>
+      <p>Official Characters are <span class="marker-highlight">created by brands, celebrities or influencers</span> to engage their audience on Character AI. To distinguish this from community-created characters, brands should <span class="marker-highlight">upload relevant data to make the character authentic</span>.</p>
+      <p>For example, to create a character from a movie or tv show, the movie studio would upload a bio and <span class="marker-highlight">screenplay or script</span> from the movie. Official Characters will use <span class="marker-highlight">Retrieval-Augmented Generation</span> to engage in conversations that are informed by the movie plot, dialogues etc.</p>
+      <p>In another example, a brand like Porsche could <span class="marker-highlight">upload technical specifications</span> of each of their cars so characters can engage in technical conversations that are backed by accurate data.</p>
+      <p>To facilitate this, Character AI will have to build a <span class="marker-highlight">dedicated character-management platform</span> that provides complete control to brands/creators for managing the entire lifecycle of their characters: from uploading propreitary data to viewing engagement &amp; ROI analytics.</p>
       <img src="images/screenshots/official-character.jpg" width="100%" class="margin-above-large rounded-corners" alt="Official Character">
     </section>
 
@@ -99,7 +101,7 @@
           <h4>For Brands</h4>
           <ul class="flat-list margin-above">
             <li>Leverage this direct line of communication with their audience to promote products, deals or events <span class="marker-highlight">within the context of a conversation</span>.</li>
-            <li>As C.AI capabilities evolve, turn this into a <span class="marker-highlight">personalized brand concierge for every customer</span>.</li>
+            <li>As C.AI capabilities evolve, scale this into a <span class="marker-highlight">personalized brand concierge for every customer</span>.</li>
           </ul>
         </div>
 
@@ -118,7 +120,7 @@
     <!-- Visual Design Exploration-->
     <section>
       <h2 class="section-title">Visual Design Exploration</h2>
-      <p>How can we make Character AI's web interface more visually appealing?</p>
+      <p>I took the liberty to re-imagine Character AI's web interface.</p>
       <img src="images/screenshots/character-inbox.jpg" width="100%" alt="" class="margin-above-large rounded-corners">
     </section>
 
@@ -236,7 +238,9 @@
 
   <script src="scripts/kr.js" type="text/javascript"></script>
   <script type="text/javascript">
-    typeNewAdjective();
+    if(window.innerWidth > 500){
+      typeNewAdjective();
+    }
   </script>
 
 </body>

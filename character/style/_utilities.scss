@@ -410,7 +410,7 @@
 h1,h2,h3,h4,h5,h6{
   margin: 0;
   font-family: $font-stack-title;
-  font-weight: normal;
+  font-weight: 500;
   word-wrap: break-word;
 }
 .page-title{
@@ -1011,6 +1011,10 @@ border-radius: 50%;
 }
 .rounded-corners{
   border-radius: $spacing-medium;
+
+  @media(max-width:$breakpoint-tablet-max){
+    border-radius: $spacing-smaller;
+  }
 }
 .rounded-corners-sm{
   border-radius: $spacing-small !important;
