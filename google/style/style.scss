@@ -432,6 +432,10 @@ p{
     color: $color-secondary-text;
     line-height: 1.4;
 
+    .marker-highlight{
+      font-weight: $font-weight-regular;
+    }
+
     @media(max-width:$breakpoint-mobile-max){
 			text-align: center;
 		}
@@ -1702,6 +1706,7 @@ footer{
   background-color: $color-marker-highlight;
   //border-bottom: 1px solid $color-marker-highlight;
   color: $color-default-text;
+  font-weight: $font-weight-bold;
   //border-radius: $spacing-smallest;
 
   a{
@@ -1937,6 +1942,9 @@ footer{
 }
 .rounded{
 	border-radius: 50%;
+}
+.rounded-img{
+  border-radius: $spacing-smaller;
 }
 
 
