@@ -414,7 +414,8 @@ h1,h2,h3,h4,h5,h6{
   line-height: 1;
 	text-transform: uppercase;
 
-  @media(max-width:$breakpoint-mobile-max){
+  @media(max-width:$breakpoint-tablet-max){
+    display: block;
     text-align: center;
   }
 }
@@ -1041,7 +1042,7 @@ html{
   &.home{
     background-color: #6cacf3;
 
-    .hero{
+    /*.hero{
       //border: 1px solid #6cacf3;
     }
 
@@ -1049,37 +1050,41 @@ html{
       //background-color: #6cacf3;
       //border-top: 1px solid #6cacf3;
       //color: $color-default-text;
-    }
+    }*/
   }
 
   &.genie{
     background-color: #4a44b0;
 
-    .hero{
+    /*.hero{
       //border: 1px solid #4a44b0;
     }
 
     .marker-highlight{
       //background-color: #4a44b0;
       //color: white;
-    }
+    }*/
   }
 
   &.agentyc{
     background-color: #5D6592; // #6E7EA6; // #3E8045; // #141938; // #306BB5;
 
-    .hero{
+    /*.hero{
       //border: 1px solid #5D6592;
     }
 
     .marker-highlight{
       //background-color: #5D6592;
       //color: white;
-    }
+    }*/
 
     .photo-frame img{
       border-radius: 0;
     }
+  }
+
+  @media (max-width: $breakpoint-tablet-max){
+    background-color: white !important;
   }
 }
 
@@ -1124,14 +1129,16 @@ body{
     .hero-cta{
       margin-top: $spacing-large;
 
-      a{
-        @media (max-width: 1420px){
-          display: block;
-          width: 100%;
-          margin:0 0 $spacing-medium 0;
-          text-align: center;
+        @media (max-width: $breakpoint-tablet-max){
+
+          display: flex;
+          justify-content: center;
+
+          a{
+            margin:0 $spacing-smaller;
+            text-align: center;
+          }
         }
-      }
     }
 
     .page-title{
@@ -1230,10 +1237,16 @@ body{
     justify-content: center;
     width: 100%;
     margin: 0;
-    padding: $spacing-medium;
-    background: #234 !important;
+    padding: 0 $spacing-medium;
+    background: white !important;
+    color: $color-default-text !important;
     text-align: center;
     border-radius: 0;
+
+    a{
+      color: $color-default-link !important;
+      border-color: $color-default-link !important;
+    }
   }
 
   
