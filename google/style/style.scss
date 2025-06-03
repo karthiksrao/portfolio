@@ -768,6 +768,11 @@ a.btn{
     line-height: $line-height-default;
   }
 
+  &.media-start{
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
   &.media-large{
     margin-top: $spacing-larger;
     align-items: flex-start;
@@ -1482,11 +1487,11 @@ footer{
 }
 
 
-.confidential{
+.alert-message{
   @extend .padded;
-  background: $color-notepad-yellow;
+  background: $color-off-white;
   border-radius: $spacing-medium;
-  color: $color-body-bg;
+  color: $color-default-text;
 
   img{
     float: left;
@@ -1783,6 +1788,7 @@ footer{
 
 .how-it-works{
   @extend .flex-vertical;
+  @extend .row-to-column;
   width: 100%;
 
   .object{

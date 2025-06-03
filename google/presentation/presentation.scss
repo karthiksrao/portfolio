@@ -1,13 +1,16 @@
 /* Imports */
 @import "../style/variables";
+@import "glide/glide.core.scss";
+@import "glide/glide.theme.scss";
 
 header{
     display: none;
 }
 
 body{
+    position: relative;
     margin-top: 0;
-    padding: 0 $spacing-largest;
+    padding: 0 $spacing-largest 50px;
     border-top: none;
 }
 
@@ -47,6 +50,11 @@ main{
     .hero.design{
         padding-bottom: 350px;
         background-color: #14181E; // #030400;
+    }
+
+    .hero.agentyc{
+        padding-bottom: 300px;
+        background-color: #5d6593;
     }
 
     .hero.wyb{
@@ -110,6 +118,12 @@ main{
 
     .design{
         background: url("images/design-2.png") bottom center no-repeat;
+        background-size: cover;
+        color: white;
+    }
+
+    .agentyc{
+        background: url("images/agentyc/agentyc-hero.jpg") bottom center no-repeat;
         background-size: cover;
         color: white;
     }
@@ -200,6 +214,11 @@ p.lead{
     font-family: "Roboto";
 }
 
+.marker-highlight{
+    border-radius: $spacing-smaller;
+    font-weight: 400;
+}
+
 .marker-highlight.pm{
     background-color: $color-lightest-green;
 }
@@ -210,6 +229,10 @@ p.lead{
 
 .media img{
     border-radius: $spacing-smaller;
+}
+
+.object-icon{
+    opacity: 0.3;
 }
 
 .vertically-centered-image-container{
@@ -261,11 +284,68 @@ table{
     align-items: flex-start;
 }
 
-footer{
+.how-it-works{
+    flex-direction: row;
+
+    .object{
+        margin-right: $spacing-medium;
+    }
+
+    .object:last-child{
+        margin-right: 0;
+    }
+}
+
+.text-color-secondary{
+    color: $color-tertiary-text !important;
+}
+
+em{
+    display: inline-block;
+    color: $color-tertiary-text;
+    font-size: $font-size-smallest;
+    font-family: monospace;
+    font-style: normal;
+}
+
+button.btn-ghost{
+    background: white;
+    color: #004b95;
+    border-color: #004b95;
+
+    &:hover{
+        background: #004b95;
+        color: white;
+    }
+}
+
+.nav-instructions{
+    display: flex;
+    padding: $spacing-medium 0;
+    justify-content: center;
+    align-items: center;
+    color: $color-tertiary-text;
+
+    img{
+        display: inline-block;
+        margin-right: $spacing-smaller;
+        opacity: 0.3;
+    }
+}
+
+/*footer{
+    position: fixed;
+    bottom: $spacing-medium;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    margin-top: $spacing-largest !important;
-    padding-top: $spacing-medium;
-    border-top: 1px solid #ccc;
-}
+    align-items: center;
+    width: 500px;
+    margin: 0 auto;
+    padding: $spacing-small;
+    background: white;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: $spacing-small;
+    color: $color-default-text;
+    text-align: center;
+    z-index: 1000;
+}*/
