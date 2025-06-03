@@ -333,6 +333,11 @@ button.btn-ghost{
     }
 }
 
+img.bordered{
+    border: 1px solid $color-lightest-grey;
+}
+
+
 /*footer{
     position: fixed;
     bottom: $spacing-medium;
