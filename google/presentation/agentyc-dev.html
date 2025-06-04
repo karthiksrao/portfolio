@@ -75,7 +75,7 @@
             </div>
             <p class="lead margin-below-largest"><span class="marker-highlight">Adaptive and dynamically themed UI:</span> Leveraging SwiftUI's powerful styling and theming capabilities, including view modifiers, custom style protocols, and environment values. For example: dynamic themes for each Model Provider. </p>
 
-            <p class="lead margin-below-largest"><span class="marker-highlight">Modular and reusable component-based architecture:</span> Adherence to SwiftUI's component-based philosophy, creating smaller, focused views that can be composed into more complex screens.</p>
+            <p class="lead margin-below-largest"><span class="marker-highlight">Model-View-ViewModel architecture with a Service Layer:</span> Agentyc primarily follows the MVVM pattern, which is strongly encouraged by SwiftUI, enhanced with a separate Service Layer (<em>DatabaseManager</em>, <em>DockerManager</em> and <em>SessionManager</em> classes) to handle complex business logic and external interactions.</p>
 
             <p class="lead margin-below-largest">Effective use of <span class="marker-highlight">Swift's modern concurrency features</span> (<em>async/await</em>, <em>Task</em>) within <em>ObservableObject</em> classes to perform long-running or background tasks without blocking the UI. Progress updates and results are fed back to the UI via <em>@Published</em> properties.</p>
         </div>
