@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta http-equiv='content-type' content='text/html; charset=UTF-8'><link rel='shortcut icon' type='image/x-icon' href='/favicon.png' />
+<meta http-equiv='content-type' content='text/html; charset=UTF-8'><link rel='shortcut icon' type='image/x-icon' href='/images/favicon.png' />
 <!-- <link type="text/css" rel="stylesheet" href="style/style.css" /> -->
 
 <style type="text/css">
@@ -31,6 +31,9 @@
         color: #789;
         font-family: "Onest", Arial, Helvetica, sans-serif;
         text-align: center;
+    }
+    p.text-left{
+        text-align: left;
     }
     a{
         color: white;
@@ -60,6 +63,20 @@
     .no-margin-below{
         margin-bottom: 0;
     }
+    .hstack{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .margin-left{
+        margin-left: 24px;
+    }
+    .padding-left{
+        padding-left: 24px;
+    }
+    .border-left{
+        border-left: 1px solid #345;
+    }
 </style>
 
 </head>
@@ -75,14 +92,20 @@
 </script>
 
 <body>
-    <img src="karthikrao.png" alt="Karthik Rao" width="64px">
-    <p>Karthik Rao is a Product Designer<br />based in Palo Alto, CA.</p>
-    <p><a href="https://www.linkedin.com/in/karth1krao" target="_blank" class="btn">View LinkedIn Profile &rarr;</a></p>
+    <div class="hstack">
+        <img src="images/karthikrao.png" alt="Karthik Rao" width="64px">
+        <div class="margin-left padding-left border-left">
+            <p class="text">Karthik Rao is a Product Designer<br />based in Palo Alto, CA.</p>
+            <p><a href="https://www.linkedin.com/in/karth1krao" target="_blank" class="btn">View LinkedIn Profile &rarr;</a></p>
+        </div>
+    </div>
+    <!--
     <hr />
     <p class="no-margin-below">Introducing</p>
     <a href="https://agentyc.ai" target="_blank"><img src="images/agentyc-logo.png" width="250" alt="Agentyc AI logo" class="margin-top" /></a>
     <a href="https://agentyc.ai" target="_blank"><img src="https://agentyc.ai/images/screenshots/agentyc-agents-view.png" alt="AI Agent created using Agentyc" width="300px" /></a>
     <p>Zero code AI Agent playground for macOS</p>
     <p><a href="https://agentyc.ai" target="_blank" class="btn">Learn More &rarr;</a></p>
+    -->
 </body>
 </html>

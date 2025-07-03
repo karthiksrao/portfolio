@@ -33,7 +33,7 @@
 
 @mixin format-project-hero($project-name){
 	.hero.#{$project-name}{
-		background-image: url(../images/projects/#{$project-name}/project-hero-blur.jpg);
+		background-image: url(../../images/projects/#{$project-name}/project-hero-blur.jpg);
 		background-position: center center;
 		background-size: 100% auto;
 		background-color: $color-dark-grey;
