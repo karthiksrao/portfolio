@@ -416,7 +416,7 @@ h1,h2,h3,h4,h5,h6{
 
   @media(max-width:$breakpoint-tablet-max){
     display: block;
-    text-align: center;
+    text-align: left !important;
   }
 }
 p{
@@ -438,7 +438,7 @@ p{
     }
 
     @media(max-width:$breakpoint-mobile-max){
-			text-align: center;
+			//text-align: center;
 		}
 
 	}
@@ -969,7 +969,7 @@ a.btn{
   background-color: mediumseagreen;
   color: $color-default-text;
 }
-.agentyc-goals img{
+.agentyc-goals img, .agentyc .how-it-works img{
   opacity: 0.3;
 }
 
@@ -1063,10 +1063,6 @@ html{
 
   &.agentyc{
     background-color: #5D6592; // #6E7EA6; // #3E8045; // #141938; // #306BB5;
-
-    .photo-frame img{
-      border-radius: 0;
-    }
   }
 
   @media (max-width: $breakpoint-tablet-max){
@@ -1246,7 +1242,7 @@ body{
   }
 
   &.agentyc{
-    background: url("../images/projects/agentyc/agentyc-hero.jpg") no-repeat center bottom;
+    background: url("../presentation/images/agentyc/agentyc-hero.jpg") no-repeat center bottom;
     background-size: cover;
   }
 
@@ -1692,6 +1688,40 @@ footer{
       margin-right: 0;
     }
   }
+}
+
+dl.well{
+    padding: $spacing-large;
+
+    dt{
+        border-bottom: none;
+    }
+
+    dd{
+        font-size: $font-size-large;
+        line-height: $line-height-paragraph;
+    }
+
+    @media (max-width: $breakpoint-mobile-max){
+      width: 100%;
+    }
+}
+
+table{
+    width: 100%;
+
+    td{
+        padding: $spacing-small;
+    }
+
+    thead td{
+        background: $color-lightest-grey;
+    }
+
+    tbody td{
+        font-size: $font-size-medium;
+        border-bottom: 1px solid $color-lightest-grey;
+    }
 }
 
 
