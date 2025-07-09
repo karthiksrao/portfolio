@@ -969,6 +969,11 @@ a.btn{
   background-color: mediumseagreen;
   color: $color-default-text;
 }
+.project-phase-timeline .col-3{
+  @media(max-width: $breakpoint-tablet-max){
+    margin-bottom: $spacing-larger;
+  }
+}
 .agentyc-goals img, .agentyc .how-it-works img{
   opacity: 0.3;
 }
@@ -1865,6 +1870,7 @@ table{
     width: 100%;
     margin-bottom: $spacing-smaller;
     color: $color-default-text;
+    text-align: left !important;
   }
 
   .object-description{
@@ -1877,6 +1883,14 @@ table{
   }
 }
 
+
+.img-width-500{
+  width: 500px;
+
+  @media(max-width: $breakpoint-tablet-max){
+    width: 100%;
+  }
+}
 
 
 
