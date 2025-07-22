@@ -946,8 +946,8 @@ a.btn{
 }
 .well-outline{
   @extend .well;
-  //background-color: transparent;
-  //border: 1px solid $color-lightest-grey;
+  background-color: transparent;
+  border: 1px solid $color-lightest-grey;
   //box-shadow: none;
 }
 .well-warning{
@@ -1484,6 +1484,17 @@ footer{
     }
   }
   
+}
+
+.values-container{
+    @extend .flex-column;
+    @extend .col-4;
+
+    img{
+      width: 24px;
+      opacity: 0.3;
+      border-radius: 0 !important
+    }
 }
 
 
