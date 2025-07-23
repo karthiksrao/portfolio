@@ -337,6 +337,13 @@ img.bordered{
     border: 1px solid $color-lightest-grey;
 }
 
+.iframe-container{
+    width:100%; 
+    height: 350px; 
+    border:1px solid #ccc; 
+    border-radius: $spacing-smaller;
+}
+
 
 /*footer{
     position: fixed;
