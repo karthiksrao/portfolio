@@ -1599,6 +1599,10 @@ footer{
     font-size: $font-size-large;
   }
 
+  hr{
+    background: #ccc !important
+  }
+
   .award-banner{
     @extend .flex; 
     @extend .margin-below;
